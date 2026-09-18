@@ -1,4 +1,4 @@
-const CACHE='big-man-d3-cue-2026-09-13-9';
+const CACHE='big-man-d3-cue-v12-2026-09-18';
 const CORE=['./','./index.html','./manifest.webmanifest','./icon-180.png','./icon-512.png','./version.json'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
